@@ -11,16 +11,14 @@ package com.turma307.exemploconta;
 public class ExemploConta {
 
     public static void main(String[] args) {
-        ContaCorrente conta1 = new ContaCorrente();
-        conta1.numero = "2345-0";
-        conta1.banco = "Banco Ludovicense";
-        conta1.agencia = "1234";
-        conta1.saldo = 150;
-        System.out.println("Conta n. " + conta1.numero);
-        System.out.println("Saldo: " + conta1.saldo);
+        ContaCorrente conta1 = new ContaCorrente("2345-0",
+                            "Banco Ludovicense", "1234", 150);
+        
+        System.out.println("Conta n. " + conta1.getNumero());
+        System.out.println("Saldo: " + conta1.getSaldo());
         
         conta1.creditar(300);
         System.out.println("Após creditar 300 reais");
-        System.out.println("Saldo: " + conta1.saldo);
+        System.out.println("Saldo: " + conta1.getSaldo());
     }
 }

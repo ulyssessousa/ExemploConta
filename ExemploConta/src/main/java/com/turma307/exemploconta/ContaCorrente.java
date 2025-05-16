@@ -10,16 +10,58 @@ package com.turma307.exemploconta;
  */
 public class ContaCorrente {
     //atributos
-    String numero;
-    String banco;
-    String agencia;
-    double saldo;
+    private String numero;
+    private String banco;
+    private String agencia;
+    private double saldo;
     
-    void creditar(double valor){
+    public ContaCorrente(String numero, String banco,
+                            String agencia, double saldo){
+        this.numero = numero;
+        this.banco = banco;
+        this.agencia = agencia;
+        this.saldo = saldo;
+    }
+    
+    public String getNumero(){
+        return numero;
+    }
+    
+    public String getBanco(){
+        return banco;
+    }
+    
+    public String getAgencia(){
+        return agencia;
+    }
+    
+    public double getSaldo(){
+        return saldo;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
+    }
+
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+    
+    public void setNumero(String numero){
+        this.numero = numero;
+    }
+    
+    public void setSaldo(double saldo){
+        if(saldo >= 0){
+            this.saldo = saldo;
+        }
+    }
+    
+    public void creditar(double valor){
         saldo = saldo + valor;
     }
     
-    void debitar(double valor){
+    public void debitar(double valor){
         saldo = saldo - valor;
     }
 }
